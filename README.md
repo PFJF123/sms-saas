@@ -1,35 +1,61 @@
-# SMS AI Assistant (SaaS)
+# SMS Calendar Assistant (SaaS)
 
-A SaaS application that provides AI chat capabilities via SMS with user management and subscription features.
+A SaaS application that provides an AI-powered calendar assistant via SMS, with user management and subscription features.
 
 ## Features
 
-- User registration and onboarding via SMS
-- Timezone configuration
-- Subscription management
-- AI chat powered by OpenAI
+- SMS-based interaction with AI calendar assistant
+- User management and onboarding flow
+- Subscription handling (trial/paid)
+- Database persistence for user data
+- Secure environment configuration
 
-## Environment Variables Required
+## Setup
 
-- `OPENAI_API_KEY`: Your OpenAI API key
-- `TWILIO_ACCOUNT_SID`: Your Twilio Account SID
-- `TWILIO_AUTH_TOKEN`: Your Twilio Auth Token
-- `TWILIO_PHONE_NUMBER`: Your Twilio phone number
-- `DATABASE_URL`: PostgreSQL database URL (provided by Vercel)
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Set up environment variables:
+   ```
+   OPENAI_API_KEY=your_openai_api_key
+   TWILIO_ACCOUNT_SID=your_twilio_account_sid
+   TWILIO_AUTH_TOKEN=your_twilio_auth_token
+   TWILIO_PHONE_NUMBER=your_twilio_phone_number
+   DATABASE_URL=your_database_url  # Optional, defaults to SQLite
+   ```
+
+4. Run locally:
+   ```bash
+   python api/webhook.py
+   ```
+
+## Deployment
+
+The application is configured for deployment on Vercel:
+
+1. Install Vercel CLI:
+   ```bash
+   npm i -g vercel
+   ```
+
+2. Deploy:
+   ```bash
+   vercel
+   ```
+
+3. Set environment variables in Vercel dashboard
 
 ## Development
 
-1. Clone the repository
-2. Install dependencies: `pip install -r requirements.txt`
-3. Set up environment variables
-4. Deploy to Vercel
-5. Configure Twilio webhook URL to: `https://[your-vercel-url]/api/webhook`
+- The main application logic is in `api/webhook.py`
+- User management is handled through SQLAlchemy models
+- Onboarding flow guides users through setup and trial activation
+- OpenAI integration provides AI responses
+- Twilio handles SMS communication
 
-## User Flow
+## License
 
-1. User sends first message
-2. System starts onboarding:
-   - Asks for name
-   - Configures timezone
-   - Sets up trial/subscription
-3. User can start chatting with AI
+MIT

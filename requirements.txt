@@ -1,10 +1,7 @@
-flask==3.0.2
-twilio==8.13.0
-openai==0.28.1
-python-dotenv==1.0.1
-python-decouple==3.8
-SQLAlchemy==2.0.25
-psycopg2-binary==2.9.9
-Flask-SQLAlchemy==3.1.1
-Flask-Migrate==4.0.5
-pytz==2023.3.post1
+flask==2.0.1
+twilio==7.17.0
+openai==0.27.0
+python-dotenv==0.19.0
+sqlalchemy==1.4.23
+psycopg2-binary==2.9.1  # For PostgreSQL support
+gunicorn==20.1.0
