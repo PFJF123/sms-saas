@@ -1,0 +1,7 @@
+{
+  "tier": 2,
+  "records": [],
+  "test": null,
+  "test_host": "claude-server",
+  "enforce_from": "2026-10-16"
+}
